@@ -1,0 +1,22 @@
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+header {
+  grid-row: 1;
+}
+
+main {
+  grid-row: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  grid-row: 3;
+}
