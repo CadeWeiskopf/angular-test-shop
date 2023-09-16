@@ -1,1 +1,7 @@
 <p>home works!</p>
+<div *ngFor="let e of products">
+  <ng-container *ngIf="e !== null; else nullTemplate">
+    {{ e | stringify }}
+  </ng-container>
+  <ng-template #nullTemplate><span>Null Value</span></ng-template>
+</div>

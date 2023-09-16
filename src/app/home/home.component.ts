@@ -1,5 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { testConstructor } from '../data/data';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  Pipe,
+  PipeTransform,
+} from '@angular/core';
+import { testConstructor, products } from '../data/data';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +13,8 @@ import { testConstructor } from '../data/data';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  products = products;
+
   constructor() {
     testConstructor();
   }
