@@ -11,7 +11,15 @@ public class ProductController {
             "tiedyetshirt", 
             "Tie Dye T-Shirt", 
             ProductCategory.T_SHIRT, 
-            "75.75")
+            "20"
+        ),
+        new Product(
+            "2",
+            "khakis", 
+            "Khakis", 
+            ProductCategory.PANTS, 
+            "75.75"
+        ),
     };
 
     @GetMapping("/products")
