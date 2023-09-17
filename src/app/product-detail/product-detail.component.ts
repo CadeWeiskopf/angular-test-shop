@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IProduct, products } from '../data/data';
+import { IProduct, getProducts } from '../data/server-requests';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -17,14 +17,23 @@ export class ProductDetailComponent {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const slug = params.get('slug');
+    const getProductBySlug = async (slug: string) => {
+      // TODO: replace with request by slug?
+      const products = await getProducts();
       const productDetails = products.find((product) => product.slug === slug);
       if (!productDetails) {
         throw Error('could not find product by slug');
       }
       console.log(`product details`, productDetails);
       this.product = productDetails;
+    };
+
+    this.route.paramMap.subscribe((params) => {
+      const slug = params.get('slug');
+      if (!slug) {
+        throw Error('product has no slug');
+      }
+      getProductBySlug(slug);
     });
   }
 

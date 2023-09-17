@@ -1,23 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { testConstructor, products } from '../data/data';
+import { Component, OnInit } from '@angular/core';
+import { IProduct } from '../data/server-requests';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  products = products;
-
-  constructor() {
-    testConstructor();
-  }
+export class HomeComponent implements OnInit {
+  products: IProduct[] = [];
 
   ngOnInit(): void {
     console.log('oninit');
-  }
-
-  ngOnDestroy(): void {
-    console.log('ondestroy');
   }
 }
