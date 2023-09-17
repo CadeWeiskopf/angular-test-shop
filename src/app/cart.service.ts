@@ -17,10 +17,10 @@ export class CartService {
 
   updateCart(newItems: ICartProduct[]): void {
     const currentCart = this.cartSubject.value;
+
+    // TODO: handle if product is in cart already
+
     const updatedCart = [...currentCart, ...newItems];
-
-    // TODO: handle if product is in cart already?
-
     this.cartSubject.next(updatedCart);
   }
 }
