@@ -1,6 +1,7 @@
 <div class="product-card-wrapper">
-  <h2>{{ product.name }}</h2>
-  <h3>${{ product.price | twoDecimalPlaces }}</h3>
-  <a routerLink="{{ product.slug }}"></a>
+  <a routerLink="/product/{{ product.slug }}">
+    <h2>{{ product.name }}</h2>
+    <h3>${{ product.price | twoDecimalPlaces }}</h3>
+  </a>
   <button (click)="addToCart()" type="button">add to cart</button>
 </div>
