@@ -1,0 +1,6 @@
+<h1>cart</h1>
+<div class="cart-wrapper">
+  <div *ngFor="let item of cart">
+    <ng-container>{{ item | stringify }}</ng-container>
+  </div>
+</div>

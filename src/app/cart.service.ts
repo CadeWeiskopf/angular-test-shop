@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IProduct } from './data/data';
 
-interface ICartProduct {
+export interface ICartProduct {
   product: IProduct;
   quantity: number;
 }

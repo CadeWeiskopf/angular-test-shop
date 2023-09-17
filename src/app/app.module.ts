@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CartDetailsComponent } from './cart-details/cart-details.component';
 
 @Pipe({ name: 'stringify' })
 export class JsonStringifyPipe implements PipeTransform {
@@ -29,6 +30,7 @@ export class TwoDecimalPlacesPipe implements PipeTransform {
     JsonStringifyPipe,
     TwoDecimalPlacesPipe,
     ProductDetailComponent,
+    CartDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
