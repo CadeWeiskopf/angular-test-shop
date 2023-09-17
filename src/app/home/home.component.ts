@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from '../data/server-requests';
+import { IProduct, getProducts } from '../data/server-requests';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
   products: IProduct[] = [];
 
   ngOnInit(): void {
-    console.log('oninit');
+    const setProducts = async () => {
+      this.products = await getProducts();
+    };
+    setProducts();
   }
 }
