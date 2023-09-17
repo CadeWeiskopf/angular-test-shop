@@ -19,6 +19,15 @@ export class CartService {
     const currentCart = this.cartSubject.value;
 
     // TODO: handle if product is in cart already
+    newItems.forEach((item, index) => {
+      const itemInCart = currentCart.find(
+        (cartItem) => cartItem.product.id === item.product.id
+      );
+      if (itemInCart) {
+        itemInCart.quantity += item.quantity;
+        newItems.splice(index, index + 1);
+      }
+    });
 
     const updatedCart = [...currentCart, ...newItems];
     this.cartSubject.next(updatedCart);
