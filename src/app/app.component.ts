@@ -9,9 +9,9 @@ import { CartService } from './cart.service';
 export class AppComponent {
   title = 'testangular';
 
-  cartItemCount: number = 0; // Initialize cartItemCount
+  cartItemCount: number = 0;
 
-  constructor(private cartService: CartService) {} // Inject the CartService
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.cart$.subscribe((cartItems) => {
