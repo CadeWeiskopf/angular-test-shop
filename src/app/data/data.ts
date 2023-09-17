@@ -21,4 +21,11 @@ export const products: IProduct[] = [
     category: ProductCategory.TShirt,
     price: 20,
   },
+  {
+    id: '2',
+    slug: 'khakis',
+    name: 'Khaki Pants',
+    category: ProductCategory.Pants,
+    price: 75.77,
+  },
 ];
