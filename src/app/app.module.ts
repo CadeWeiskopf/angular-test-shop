@@ -13,12 +13,20 @@ export class JsonStringifyPipe implements PipeTransform {
   }
 }
 
+@Pipe({ name: 'twoDecimalPlaces' })
+export class TwoDecimalPlacesPipe implements PipeTransform {
+  transform(value: number): string {
+    return value.toFixed(2);
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductCardComponent,
     JsonStringifyPipe,
+    TwoDecimalPlacesPipe,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

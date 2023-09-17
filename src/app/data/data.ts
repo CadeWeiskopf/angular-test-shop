@@ -6,11 +6,19 @@ enum ProductCategory {
   TShirt = 'T-Shirt',
   Pants = 'Pants',
 }
-interface IProduct {
+export interface IProduct {
   id: string;
+  slug: string;
   name: string;
   category: ProductCategory;
+  price: number;
 }
 export const products: IProduct[] = [
-  { id: '1', name: 'Tie Dye T-Shirt', category: ProductCategory.TShirt },
+  {
+    id: '1',
+    slug: 'tiedyetshirt',
+    name: 'Tie Dye T-Shirt',
+    category: ProductCategory.TShirt,
+    price: 20,
+  },
 ];
