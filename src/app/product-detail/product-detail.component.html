@@ -1,4 +1,8 @@
-<h1>{{ product.name }}</h1>
-<div class="product-details-wrapper">
-  <button (click)="addToCart()">add to cart</button>
-</div>
+<div *ngIf="loading; else productDetails">loading.</div>
+
+<ng-template #productDetails>
+  <h1>{{ product.name }}</h1>
+  <div class="product-details-wrapper">
+    <button (click)="addToCart()">add to cart</button>
+  </div>
+</ng-template>

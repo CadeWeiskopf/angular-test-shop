@@ -9,10 +9,13 @@ import { IProduct, getProducts } from '../data/server-requests';
 export class HomeComponent implements OnInit {
   products: IProduct[] = [];
 
+  loadingProducts = true;
+
   ngOnInit(): void {
     const setProducts = async () => {
       this.products = await getProducts();
     };
     setProducts();
+    this.loadingProducts = false;
   }
 }

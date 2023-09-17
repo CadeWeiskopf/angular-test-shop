@@ -11,6 +11,8 @@ import { CartService } from '../cart.service';
 export class ProductDetailComponent {
   product!: IProduct;
 
+  loading = true;
+
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService
@@ -26,6 +28,7 @@ export class ProductDetailComponent {
       }
       console.log(`product details`, productDetails);
       this.product = productDetails;
+      this.loading = false;
     };
 
     this.route.paramMap.subscribe((params) => {

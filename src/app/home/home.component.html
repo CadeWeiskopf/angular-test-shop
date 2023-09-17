@@ -1,10 +1,14 @@
 <h1>home</h1>
 
-<div class="home-products-wrapper">
-  <div *ngFor="let product of products">
-    <ng-container *ngIf="product !== null; else nullTemplate">
-      <app-product-card [product]="product"></app-product-card>
-    </ng-container>
-    <ng-template #nullTemplate><span>Null Value</span></ng-template>
+<div *ngIf="loadingProducts; else productsWrapper">loading.</div>
+
+<ng-template #productsWrapper>
+  <div class="home-products-wrapper">
+    <div *ngFor="let product of products">
+      <ng-container *ngIf="product !== null; else nullTemplate">
+        <app-product-card [product]="product"></app-product-card>
+      </ng-container>
+      <ng-template #nullTemplate><span>Null Value</span></ng-template>
+    </div>
   </div>
-</div>
+</ng-template>
