@@ -15,6 +15,10 @@ export class CartService {
 
   cart$ = this.cartSubject.asObservable();
 
+  getTotalLineItems(cart: ICartProduct[]) {
+    return cart.reduce((prev, current) => prev + current.quantity, 0);
+  }
+
   updateCart(newItems: ICartProduct[]): void {
     const currentCart = this.cartSubject.value;
 

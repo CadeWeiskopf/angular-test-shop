@@ -15,7 +15,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.cartService.cart$.subscribe((cartItems) => {
-      this.cartItemCount = cartItems.length;
+      this.cartItemCount = this.cartService.getTotalLineItems(cartItems);
     });
   }
 }
