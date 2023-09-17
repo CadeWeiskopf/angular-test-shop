@@ -8,8 +8,4 @@ import { IProduct } from '../data/data';
 })
 export class ProductCardComponent {
   @Input() product!: IProduct;
-
-  addToCart = () => {
-    console.log('add to cart');
-  };
 }
