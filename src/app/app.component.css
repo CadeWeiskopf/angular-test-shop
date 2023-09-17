@@ -14,6 +14,12 @@ header {
   justify-content: center;
   align-items: center;
 }
+.header-wrapper {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  justify-content: space-between;
+}
 
 main {
   grid-row: 2;
