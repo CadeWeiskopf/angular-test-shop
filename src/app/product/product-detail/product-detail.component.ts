@@ -21,7 +21,7 @@ export class ProductDetailComponent implements OnInit {
       if (!productDetails) {
         throw Error('could not find product by slug');
       }
-      console.log(`product details`, productDetails)S;
+      console.log(`product details`, productDetails);
       this.product = productDetails;
       this.loading = false;
     };
