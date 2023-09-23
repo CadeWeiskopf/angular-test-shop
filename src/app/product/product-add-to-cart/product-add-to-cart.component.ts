@@ -10,10 +10,15 @@ import { IProduct } from 'src/app/data/server-requests';
 export class ProductAddToCartComponent {
   @Input() product!: IProduct;
 
+  quantity!: number;
+
   constructor(private cartService: CartService) {}
 
-  addToCart() {
-    // todo: add quantity
-    this.cartService.updateCart([{ product: this.product, quantity: 1 }]);
+  addToCart(event: Event) {
+    event.preventDefault();
+
+    this.cartService.updateCart([
+      { product: this.product, quantity: this.quantity },
+    ]);
   }
 }

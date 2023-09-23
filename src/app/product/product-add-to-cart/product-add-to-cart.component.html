@@ -1,1 +1,10 @@
-<button (click)="addToCart()">add to cart</button>
+<div class="product-add-to-cart-wrapper">
+  <form (submit)="addToCart($event)">
+    <input
+      type="number"
+      [(ngModel)]="quantity"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <button>add to cart</button>
+  </form>
+</div>

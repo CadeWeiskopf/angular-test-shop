@@ -6,6 +6,7 @@ import { ProductsWrapperComponent } from './products-wrapper/products-wrapper.co
 import { UtilPipesModule } from '../util-pipes/util-pipes.module';
 import { RouterLink } from '@angular/router';
 import { ProductAddToCartComponent } from './product-add-to-cart/product-add-to-cart.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { ProductAddToCartComponent } from './product-add-to-cart/product-add-to-
     ProductsWrapperComponent,
     ProductAddToCartComponent,
   ],
-  imports: [CommonModule, UtilPipesModule, RouterLink],
+  imports: [CommonModule, UtilPipesModule, RouterLink, FormsModule],
   exports: [ProductsWrapperComponent],
 })
 export class ProductModule {}
