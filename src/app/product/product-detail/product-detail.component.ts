@@ -15,10 +15,6 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    if (!this.product) {
-      throw Error('No product set on product detail component');
-    }
-
     const getProductBySlug = async (slug: string) => {
       // TODO: replace with request by slug?
       const products = await getProducts();
@@ -26,7 +22,7 @@ export class ProductDetailComponent implements OnInit {
       if (!productDetails) {
         throw Error('could not find product by slug');
       }
-      console.log(`product details`, productDetails);
+      console.log(`product details`, productDetails)S;
       this.product = productDetails;
       this.loading = false;
     };
