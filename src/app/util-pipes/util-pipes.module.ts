@@ -10,8 +10,8 @@ export class JsonStringifyPipe implements PipeTransform {
 
 @Pipe({ name: 'twoDecimalPlaces' })
 export class TwoDecimalPlacesPipe implements PipeTransform {
-  transform(value: number): string {
-    return value.toFixed(2);
+  transform(value: number | undefined): string {
+    return value === undefined ? 'error' : value.toFixed(2);
   }
 }
 
