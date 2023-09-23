@@ -7,8 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartDetailsComponent } from './cart-details/cart-details.component';
-import { ToastNotificationComponent } from './toast-notification/toast-notification.component';
-import { ToastNotificationWrapperComponent } from './toast-notification-wrapper/toast-notification-wrapper.component';
+import { ToastNotificationComponent } from './toast/toast-notification/toast-notification.component';
+import { ToastNotificationWrapperComponent } from './toast/toast-notification-wrapper/toast-notification-wrapper.component';
 
 @Pipe({ name: 'stringify' })
 export class JsonStringifyPipe implements PipeTransform {
