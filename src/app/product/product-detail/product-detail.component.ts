@@ -8,13 +8,17 @@ import { IProduct, getProducts } from '../../data/server-requests';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  product!: IProduct;
+  product: IProduct | undefined;
 
   loading = true;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    if (!this.product) {
+      throw Error('No product set on product detail component');
+    }
+
     const getProductBySlug = async (slug: string) => {
       // TODO: replace with request by slug?
       const products = await getProducts();
