@@ -1,8 +1,26 @@
 <div *ngIf="loading; else productDetails">loading.</div>
 
 <ng-template #productDetails>
-  <h1>{{ product?.name }}</h1>
   <div class="product-details-wrapper">
-    <app-product-add-to-cart [product]="product" />
+    <div class="top-left">
+      <picture>
+        <img alt="img_placeholder" src="localhost:9999" />
+      </picture>
+    </div>
+
+    <div class="top-right">
+      <h1>{{ product?.name }}</h1>
+      <app-product-add-to-cart [product]="product" />
+    </div>
+
+    <div class="bottom-section">
+      <h2>Details</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+        expedita repellat facere ex voluptas minima, iste ullam ea consequuntur
+        assumenda perferendis? Labore adipisci architecto quasi quod dolore
+        voluptatem modi explicabo.
+      </p>
+    </div>
   </div>
 </ng-template>

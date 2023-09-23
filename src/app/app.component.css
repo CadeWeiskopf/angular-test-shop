@@ -43,3 +43,9 @@ main {
 footer {
   grid-row: 3;
 }
+
+app-toast-notification-wrapper {
+  position: absolute;
+  width: auto;
+  height: auto;
+}

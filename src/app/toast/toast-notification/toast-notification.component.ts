@@ -10,7 +10,7 @@ export class ToastNotificationComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
 
   ngOnInit(): void {
-    setTimeout(() => this.closeToast(), 2000);
+    setTimeout(() => this.closeToast(), 20000);
   }
 
   closeToast() {
