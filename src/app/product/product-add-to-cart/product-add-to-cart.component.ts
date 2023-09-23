@@ -17,6 +17,11 @@ export class ProductAddToCartComponent {
   addToCart(event: Event) {
     event.preventDefault();
 
+    const form = event.target as HTMLFormElement;
+    if (!form.reportValidity()) {
+      return;
+    }
+
     if (!this.product) {
       throw Error('No product set for add to cart');
     }
