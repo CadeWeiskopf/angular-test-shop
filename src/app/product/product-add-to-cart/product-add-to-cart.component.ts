@@ -8,7 +8,7 @@ import { IProduct } from 'src/app/data/server-requests';
   styleUrls: ['./product-add-to-cart.component.css'],
 })
 export class ProductAddToCartComponent {
-  @Input() product!: IProduct;
+  @Input() product: IProduct | undefined;
 
   quantity!: number;
 
@@ -16,6 +16,10 @@ export class ProductAddToCartComponent {
 
   addToCart(event: Event) {
     event.preventDefault();
+
+    if (!this.product) {
+      throw Error('No product set for add to cart');
+    }
 
     this.cartService.updateCart([
       { product: this.product, quantity: this.quantity },

@@ -3,5 +3,6 @@
     <h2>{{ product.name }}</h2>
     <h3>${{ product.price | twoDecimalPlaces }}</h3>
   </a>
+
+  <app-product-add-to-cart [product]="product" />
 </div>
-<button (click)="newToast()">add toast test</button>
