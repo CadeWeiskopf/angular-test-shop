@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IProduct } from '../data/server-requests';
-import { ToastService } from '../toast/toast.service';
+import { IProduct } from '../../data/server-requests';
+import { ToastService } from '../../toast/toast.service';
 
 @Component({
   selector: 'app-product-card',

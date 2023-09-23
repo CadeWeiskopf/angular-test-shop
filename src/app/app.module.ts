@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductCardComponent } from './product/product-card/product-card.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { CartDetailsComponent } from './cart-details/cart-details.component';
-import { ToastNotificationComponent } from './toast/toast-notification/toast-notification.component';
 import { ToastNotificationWrapperComponent } from './toast/toast-notification-wrapper/toast-notification-wrapper.component';
+import { ToastNotificationComponent } from './toast/toast-notification/toast-notification.component';
 
 @Pipe({ name: 'stringify' })
 export class JsonStringifyPipe implements PipeTransform {
