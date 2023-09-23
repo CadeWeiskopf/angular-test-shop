@@ -6,13 +6,17 @@ import { Injectable } from '@angular/core';
 export class ToastService {
   constructor() {}
 
-  toasts: string[] = [];
+  toasts: { id: number; message: string }[] = [];
 
   addToast(message: string) {
-    this.toasts.push(message);
+    this.toasts.push({ id: new Date().getTime(), message });
   }
 
-  removeToast(index: number) {
-    this.toasts.splice(index, 1);
+  removeToast(id: number) {
+    console.log('removetoast', id);
+    const toastIndex = this.toasts.findIndex((toast) => {
+      return toast.id === id;
+    });
+    this.toasts.splice(toastIndex, 1);
   }
 }

@@ -1,8 +1,8 @@
 <div class="toast-notifications-wrapper">
   <div *ngFor="let toast of getToastService().toasts; let i = index">
     <app-toast-notification
-      [message]="toast"
-      (close)="getToastService().removeToast(i)"
+      [message]="toast.message"
+      (close)="getToastService().removeToast(toast.id)"
     />
   </div>
 </div>

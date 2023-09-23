@@ -8,7 +8,7 @@ import { CartService } from '../cart.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit {
   product!: IProduct;
 
   loading = true;
