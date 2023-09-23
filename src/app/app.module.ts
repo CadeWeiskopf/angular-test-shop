@@ -4,39 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProductCardComponent } from './product/product-card/product-card.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { CartDetailsComponent } from './cart-details/cart-details.component';
-import { ToastNotificationWrapperComponent } from './toast/toast-notification-wrapper/toast-notification-wrapper.component';
-import { ToastNotificationComponent } from './toast/toast-notification/toast-notification.component';
-
-@Pipe({ name: 'stringify' })
-export class JsonStringifyPipe implements PipeTransform {
-  transform(value: any): string {
-    return JSON.stringify(value);
-  }
-}
-
-@Pipe({ name: 'twoDecimalPlaces' })
-export class TwoDecimalPlacesPipe implements PipeTransform {
-  transform(value: number): string {
-    return value.toFixed(2);
-  }
-}
+import { ProductModule } from './product/product.module';
+import { ToastModule } from './toast/toast.module';
+import { UtilPipesModule } from './util-pipes/util-pipes.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ProductCardComponent,
-    JsonStringifyPipe,
-    TwoDecimalPlacesPipe,
-    ProductDetailComponent,
-    CartDetailsComponent,
-    ToastNotificationComponent,
-    ToastNotificationWrapperComponent,
+  declarations: [AppComponent, HomeComponent, CartDetailsComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ProductModule,
+    ToastModule,
+    UtilPipesModule,
   ],
-  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

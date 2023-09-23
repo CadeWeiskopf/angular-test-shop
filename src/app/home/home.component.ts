@@ -1,21 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { IProduct, getProducts } from '../data/server-requests';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
-  products: IProduct[] = [];
-
-  loadingProducts = true;
-
-  ngOnInit(): void {
-    const setProducts = async () => {
-      this.products = await getProducts();
-    };
-    setProducts();
-    this.loadingProducts = false;
-  }
-}
+export class HomeComponent {}

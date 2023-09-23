@@ -1,0 +1,13 @@
+<div *ngIf="loadingProducts; else productsWrapper">loading.</div>
+
+<ng-template #productsWrapper>
+  <div class="products-wrapper">
+    <div *ngFor="let product of products">
+      <ng-container *ngIf="product !== null; else nullTemplate">
+        <app-product-card [product]="product" />
+      </ng-container>
+
+      <ng-template #nullTemplate><span>Null Value</span></ng-template>
+    </div>
+  </div>
+</ng-template>
