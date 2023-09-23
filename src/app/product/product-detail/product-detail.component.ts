@@ -16,7 +16,6 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const getProductBySlug = async (slug: string) => {
-      // TODO: replace with request by slug?
       const products = await getProducts();
       const productDetails = products.find((product) => product.slug === slug);
       if (!productDetails) {
