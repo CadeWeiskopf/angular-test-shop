@@ -8,7 +8,7 @@ import { IProduct } from 'src/app/data/server-requests';
   styleUrls: ['./product-add-to-cart.component.css'],
 })
 export class ProductAddToCartComponent {
-  @Input() product: IProduct | undefined;
+  @Input({ required: true }) product: IProduct | undefined;
 
   quantity!: number;
 

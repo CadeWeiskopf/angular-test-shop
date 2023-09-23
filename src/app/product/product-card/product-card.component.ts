@@ -8,7 +8,7 @@ import { ToastService } from '../../toast/toast.service';
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent {
-  @Input() product: IProduct | undefined;
+  @Input({ required: true }) product: IProduct | undefined;
 
   constructor(private toastService: ToastService) {}
 

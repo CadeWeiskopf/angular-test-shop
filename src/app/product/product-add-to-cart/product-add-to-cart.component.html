@@ -1,6 +1,7 @@
 <div class="product-add-to-cart-wrapper">
   <form (submit)="addToCart($event)">
     <input
+      required
       type="number"
       [(ngModel)]="quantity"
       [ngModelOptions]="{ standalone: true }"
