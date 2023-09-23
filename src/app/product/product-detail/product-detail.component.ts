@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct, getProducts } from '../../data/server-requests';
-import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,10 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   loading = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private cartService: CartService
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const getProductBySlug = async (slug: string) => {
@@ -38,10 +34,5 @@ export class ProductDetailComponent implements OnInit {
       }
       getProductBySlug(slug);
     });
-  }
-
-  addToCart() {
-    // todo: add quantity
-    this.cartService.updateCart([{ product: this.product, quantity: 1 }]);
   }
 }

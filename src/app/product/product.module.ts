@@ -5,12 +5,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductsWrapperComponent } from './products-wrapper/products-wrapper.component';
 import { UtilPipesModule } from '../util-pipes/util-pipes.module';
 import { RouterLink } from '@angular/router';
+import { ProductAddToCartComponent } from './product-add-to-cart/product-add-to-cart.component';
 
 @NgModule({
   declarations: [
     ProductCardComponent,
     ProductDetailComponent,
     ProductsWrapperComponent,
+    ProductAddToCartComponent,
   ],
   imports: [CommonModule, UtilPipesModule, RouterLink],
   exports: [ProductsWrapperComponent],
