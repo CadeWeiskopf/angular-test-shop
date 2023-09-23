@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CartService } from 'src/app/cart.service';
 import { IProduct } from 'src/app/data/server-requests';
+import { ToastService } from 'src/app/toast/toast.service';
 
 @Component({
   selector: 'app-product-add-to-cart',
@@ -12,7 +13,10 @@ export class ProductAddToCartComponent {
 
   quantity!: number;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private toastService: ToastService
+  ) {}
 
   addToCart(event: Event) {
     event.preventDefault();
@@ -29,5 +33,9 @@ export class ProductAddToCartComponent {
     this.cartService.updateCart([
       { product: this.product, quantity: this.quantity },
     ]);
+
+    this.toastService.addToast(
+      `Added ${this.quantity} x ${this.product.name} to your cart.`
+    );
   }
 }
